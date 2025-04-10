@@ -3,8 +3,9 @@ import { View, Text, Image, FlatList, TouchableOpacity, TextInput, Switch, Scrol
 import { Picker } from "@react-native-picker/picker";
 import Slider from "@react-native-community/slider";
 import styles from "./style";
+import { useFonts, Inter_300Light } from "@expo-google-fonts/inter";
 
-//imagens adicionais 
+ 
 const imagensDestaque = [
   require("./assets/Duna deserto.jpg"),
   require("./assets/Duna nave.jpg"),
@@ -170,7 +171,6 @@ export default function App() {
   return (
     <View style={styles.container}>
       <ScrollView>
-        {/* SEÇÃO DO FILME */}
         <View style={styles.filmeContainer}>
           <Image source={filme.imagem} style={styles.filmePoster} />
           <Text style={styles.filmeTitulo}>{filme.titulo} (2021)</Text>
@@ -189,7 +189,6 @@ export default function App() {
             <Text style={styles.infoItem}>🎭 Gênero: {filme.genero}</Text>
           </View>
 
-          {/* GALERIA DE IMAGENS */}
           <Text style={styles.sectionTitle}>Galeria de Arrakis</Text>
           <ScrollView
             horizontal
@@ -206,7 +205,6 @@ export default function App() {
           </ScrollView>
         </View>
 
-        {/* FILTROS */}
         <View style={styles.filtrosContainer}>
           <Text style={styles.sectionTitle}>Filtrar Elenco</Text>
 
@@ -217,7 +215,6 @@ export default function App() {
             onChangeText={setNome}
           />
 
-          {/* INPUTS ADICIONAIS */}
           <TextInput
             style={styles.input}
             placeholder="Email do ator (simulado)"
@@ -280,7 +277,6 @@ export default function App() {
             />
           </View>
 
-          {/* SLIDER EXTRA */}
           <View style={styles.sliderContainer}>
             <Text style={styles.filterLabel}>Nota mínima (simulado): 0</Text>
             <Slider
@@ -305,7 +301,6 @@ export default function App() {
             />
           </View>
 
-          {/* SWITCH EXTRA */}
           <View style={styles.switchContainer}>
             <Text style={styles.filterLabel}>Incluir participações especiais</Text>
             <Switch
@@ -316,7 +311,6 @@ export default function App() {
             />
           </View>
 
-          {/* BOTÕES */}
           <View style={styles.botoesContainer}>
             <TouchableOpacity style={styles.botao} onPress={() => alert("Busca aplicada!")}>
               <Text style={styles.botaoTexto}>Aplicar Filtros</Text>
@@ -327,7 +321,6 @@ export default function App() {
           </View>
         </View>
 
-        {/* LISTA DE ATORES */}
         <View style={styles.elencoContainer}>
           <Text style={styles.sectionTitle}>Elenco Principal</Text>
           <FlatList
